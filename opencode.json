@@ -1,0 +1,36 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "vllm": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "vLLM",
+      "options": {
+        "baseURL": "http://192.168.4.108:14100/v1"
+      },
+      "models": {
+        "qwen3.6-27b": {
+          "name": "Qwen3.6 27b",
+          "limit": {
+            "context": 200000,
+            "output": 40000
+          }
+        }
+      }
+    }
+  },
+  "enabled_providers": ["vllm"],
+  "model": "vllm/qwen3.6-27b",
+  "small_model": "vllm/qwen3.6-27b",
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{file:.context7-api-key}"
+      }
+    }
+  },
+  "plugin": [
+    "@tarquinen/opencode-dcp@latest"
+  ]
+}
