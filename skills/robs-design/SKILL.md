@@ -1,6 +1,6 @@
 ---
 name: robs-design
-description: "MUST use when creating, writing, or generating ANY design.md file. This skill is REQUIRED for all design.md artifacts — do not skip it. Defines the mandatory structure, depth, and formatting conventions. Do NOT use for proposals, specs, or tasks — this skill is exclusively for design.md files."
+description: "Use when designing software architecture or new features: producing technical design documents with model definitions, service code, API contracts, migration strategies, and testing plans. Works alongside OpenSpec proposals or stands alone for feature design. This is NOT the `design.md` UI design system format (colors, typography, components) — this is purely for engineering architecture documentation."
 ---
 
 ## Quick start

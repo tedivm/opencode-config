@@ -21,9 +21,7 @@
       }
     }
   },
-  "enabled_providers": [
-    "vllm"
-  ],
+  "enabled_providers": ["vllm"],
   "model": "vllm/qwen3.6-27b",
   "small_model": "vllm/qwen3.6-27b",
   "mcp": {
@@ -35,7 +33,5 @@
       }
     }
   },
-  "plugin": [
-    "@tarquinen/opencode-dcp@latest"
-  ]
+  "plugin": ["@tarquinen/opencode-dcp@latest"]
 }

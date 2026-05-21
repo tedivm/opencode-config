@@ -3,6 +3,6 @@
   "compress": {
     "showCompression": true,
     "maxContextLimit": 150000,
-    "minContextLimit": 130000
-  }
+    "minContextLimit": 130000,
+  },
 }
