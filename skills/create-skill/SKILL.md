@@ -1,6 +1,10 @@
 ---
 name: create-skill
 description: Use when asked to create, generate, or scaffold a new Agent Skill. Don't use for modifying existing skills or writing general documentation.
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Determine the skill name
@@ -27,8 +31,28 @@ Required fields:
 
 Optional fields:
 
+- `license` — license name or reference to a bundled license file
 - `compatibility` — 1-500 chars, environment requirements
-- `metadata` — arbitrary string-to-string key-value map
+- `metadata` — arbitrary string-to-string key-value map (use `author` for the author name)
+
+### Source metadata
+
+Always add a `source` field under `metadata` pointing to the repository URL. Resolve it dynamically — do not hardcode:
+
+1. Run `git remote get-url origin` to get the remote URL
+2. Convert `ssh` format (`git@github.com:user/repo.git`) to `https` (`https://github.com/user/repo`)
+3. Strip `.git` suffix if present
+4. Add `metadata:\n  source: <url>` to the frontmatter
+
+### Author and license
+
+Determine author and license dynamically:
+
+1. Run `whoami` to check the current username
+2. If the username is `tedivm`:
+   - Set `license: MIT`
+   - Set `metadata.author: Robert Hafner`
+3. Otherwise, ask the user for their name and preferred license, then add them to the frontmatter
 
 ### Description best practices
 
@@ -246,6 +270,9 @@ Ask an LLM to attack the skill's logic: what happens on failure, unsupported con
 - [ ] `SKILL.md` is spelled in all caps
 - [ ] Frontmatter has `name` and `description`
 - [ ] `name` matches directory name
+- [ ] `metadata.source` contains the resolved repository HTTPS URL
+- [ ] `license` is set (MIT for `tedivm`)
+- [ ] `metadata.author` is set (Robert Hafner for `tedivm`)
 - [ ] Description is third-person, specific, includes trigger keywords
 - [ ] SKILL.md body is under 500 lines
 - [ ] File references are one level deep with forward slashes

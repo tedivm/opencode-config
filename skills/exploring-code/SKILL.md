@@ -1,6 +1,10 @@
 ---
 name: exploring-code
 description: Use when doing a thorough exploration of an existing codebase. Guides a subagent through reading documentation, reviewing tests, analyzing architecture, and producing a comprehensive overview. Don't use for quick lookups or single-file questions.
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start

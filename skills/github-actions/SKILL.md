@@ -1,6 +1,10 @@
 ---
 name: github-actions
 description: "Use when creating, modifying, or reviewing GitHub Actions workflow files. Covers workflow syntax, action selection, dependabot configuration, and CI/CD best practices."
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start

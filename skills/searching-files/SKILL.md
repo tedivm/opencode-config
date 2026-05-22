@@ -2,6 +2,10 @@
 name: searching-files
 description: Use when searching for or replacing text, patterns, or content across files in a codebase. Use `rg` (ripgrep) for all file content searches and replacements. Don't use for finding files by name or path patterns (use `glob` instead).
 compatibility: Requires ripgrep 14+. Install: brew install ripgrep (macOS), apt install ripgrep (Linux), cargo install ripgrep (any).
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start

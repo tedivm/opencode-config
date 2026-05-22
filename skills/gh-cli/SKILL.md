@@ -1,6 +1,10 @@
 ---
 name: gh-cli
 description: "All actions on GitHub must use this skill. Covers pull requests, issues, repositories, releases, GitHub Actions, searches, and API requests via the `gh` CLI."
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick Start

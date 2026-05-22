@@ -1,6 +1,10 @@
 ---
 name: robs-design
 description: "Use when designing software architecture or new features: producing technical design documents with model definitions, service code, API contracts, migration strategies, and testing plans. Works alongside OpenSpec proposals or stands alone for feature design. This is NOT the `design.md` UI design system format (colors, typography, components) — this is purely for engineering architecture documentation."
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start

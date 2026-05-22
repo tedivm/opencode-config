@@ -1,6 +1,10 @@
 ---
 name: bootstrapping-plan
 description: Use when bootstrapping the design of a brand new project — producing a plan.md through iterative exploration. Don't use for modifying existing plans, implementing features, or working with established codebases.
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start

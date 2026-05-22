@@ -1,6 +1,10 @@
 ---
 name: making-prs
 description: "Use when creating a pull request, preparing changes for review, or pushing work to GitHub. Handles quality checks, branch management, conventional commits, openspec archival, and PR creation end-to-end."
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start

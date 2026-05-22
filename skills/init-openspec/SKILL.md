@@ -1,6 +1,10 @@
 ---
 name: init-openspec
 description: Use when initializing or setting up OpenSpec in a project that doesn't have it yet. Don't use for creating, applying, exploring, or tinkering with OpenSpec proposals.
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Workflow

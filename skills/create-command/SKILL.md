@@ -1,6 +1,10 @@
 ---
 name: create-command
 description: Use when creating or modifying custom opencode commands in the `commands/` directory. Covers markdown command files, frontmatter options (description, agent, model, subtask), prompt templates with $ARGUMENTS, shell output injection, and file references.
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start

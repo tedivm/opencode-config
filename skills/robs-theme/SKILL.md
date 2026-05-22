@@ -1,6 +1,10 @@
 ---
 name: robs-theme
 description: "Use when working on *.tdvm.net and *.tedivm.com services, or when asked to apply `rob's` or `my` style. Applies Rob's personal design system: dark purple palette with pink/cyan/purple accents, specific typography hierarchy, and component patterns (cards, badges, alerts, buttons). Don't use for generic styling or other projects."
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start

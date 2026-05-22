@@ -2,6 +2,10 @@
 name: parsing-json
 description: "Use when parsing, querying, transforming, or extracting data from JSON files, API responses, or JSON streams. Always use the `jq` CLI for all JSON operations. Do not use for YAML, XML, CSV, or plain-text parsing. Don't use for building JSON from scratch in Python, Node, or other languages when `jq` can handle it."
 compatibility: Requires `jq` 1.6+ installed
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start

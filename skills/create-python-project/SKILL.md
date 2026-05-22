@@ -2,6 +2,10 @@
 name: create-python-project
 description: Use when creating a new Python project from Rob's Awesome Python Template (cookiecutter). Don't use for adding Python to existing projects, installing packages, or working with established codebases.
 compatibility: Requires `uv` installed
+license: MIT
+metadata:
+  author: Robert Hafner
+  source: https://github.com/tedivm/opencode-config
 ---
 
 ## Quick start
