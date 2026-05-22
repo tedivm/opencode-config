@@ -49,6 +49,9 @@ If the project uses OpenSpec (check for `.openspec/` directory or `openspec.json
    - `test` — adding or modifying tests
    - `style` — formatting, missing semicolons, etc
    - `perf` — performance improvements
+
+   **Functional markdown:** `AGENTS.md` files and skills (`.opencode/skills/` or `skills/`) are markdown but function as agent instructions. Changes to them alter agent behavior — classify them as `feat` (new behavior), `fix` (corrected behavior), or `refactor` (restructured guidance), never `chore` or `docs`.
+
 3. Write a conventional commit message:
    - Format: `<type>(<scope>): <description>`
    - Scope is optional but encouraged (use the main module, feature, or file changed).
