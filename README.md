@@ -27,21 +27,21 @@ npm install     # installs @opencode-ai/plugin dependency
 
 Custom agent skills in `skills/`:
 
-| Skill                   | Purpose                                                       |
-| ----------------------- | ------------------------------------------------------------- |
-| `bootstrapping-plan`    | Design new projects via iterative exploration                 |
-| `create-command`        | Create/modify opencode custom commands                        |
-| `create-python-project` | Scaffold Python projects from cookiecutter template           |
-| `create-skill`          | Generate new agent skills                                     |
-| `customize-opencode`    | Edit opencode's own configuration files                       |
-| `exploring-code`        | Deep codebase exploration via subagent                        |
-| `gh-cli`                | All GitHub CLI operations (PRs, issues, actions)              |
-| `init-openspec`         | Initialize OpenSpec in a project                              |
-| `parsing-json`          | JSON parsing/transforming with `jq`                           |
-| `quality-checks`        | Iterative test/fix loops until clean                          |
-| `robs-design`           | Rob's design system (dark purple palette, component patterns) |
-| `robs-theme`            | Theme for brain.tdvm.net services                             |
-| `searching-files`       | File content search with `rg` (ripgrep)                       |
+| Skill                   | Purpose                                             |
+| ----------------------- | --------------------------------------------------- |
+| `bootstrapping-plan`    | Design new projects via iterative exploration       |
+| `create-command`        | Create/modify opencode custom commands              |
+| `create-python-project` | Scaffold Python projects from cookiecutter template |
+| `create-skill`          | Generate new agent skills                           |
+| `customize-opencode`    | Edit opencode's own configuration files             |
+| `exploring-code`        | Deep codebase exploration via subagent              |
+| `gh-cli`                | All GitHub CLI operations (PRs, issues, actions)    |
+| `init-openspec`         | Initialize OpenSpec in a project                    |
+| `parsing-json`          | JSON parsing/transforming with `jq`                 |
+| `quality-checks`        | Iterative test/fix loops until clean                |
+| `robs-design`           | Rob's system design standard, used with openspec    |
+| `robs-theme`            | Rob's color and font preferences                    |
+| `searching-files`       | File content search with `rg` (ripgrep)             |
 
 ## Environment Files
 
