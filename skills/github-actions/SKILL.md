@@ -13,7 +13,7 @@ All GitHub Actions workflows must follow these rules. Apply them every time a wo
 
 ## Hard rules
 
-1. **Always set `fail-fast: false`.** Add `fail-fast: false` to every `strategy` block so a failure in one matrix job does not cancel the others. All jobs should run to completion regardless of failures.
+1. **Set `fail-fast: false` on matrix jobs.** When using a `strategy` block with a `matrix`, add `fail-fast: false` so a failure in one matrix job does not cancel the others. Do not add `fail-fast` to workflows that do not use a matrix strategy.
 
 2. **Always use the latest versions of actions.** Before referencing any action, look up its latest release tag and resolve it to a commit SHA using `gh`. Run both commands for each action:
 

@@ -1,0 +1,106 @@
+/* ============================================================
+   Prism — syntax highlighting token colors
+   Source: docs/vanilla/theme.css
+   ============================================================ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--code-fg);
+  background: var(--code) !important;
+  font-family: 'Source Code Pro', 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre[class*="language-"] {
+  border: 1px solid var(--surface);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  overflow-x: auto;
+}
+
+pre code { background: none; padding: 0; color: inherit; }
+
+.token.comment,
+.token.cdata {
+  color: var(--muted) !important;
+}
+
+.token.prolog,
+.token.doctype,
+.token.string,
+.token.char,
+.token.attr-value,
+.token.number,
+.token.boolean {
+  color: var(--success) !important;
+}
+
+.token.keyword,
+.token.module,
+.token.control,
+.token.function,
+.token.function-name,
+.token.function-variable {
+  color: var(--primary) !important;
+}
+
+.token.operator,
+.token.punctuation,
+.token.url,
+.token.deleted {
+  color: var(--error) !important;
+}
+
+.token.property,
+.token.variable,
+.token.symbol {
+  color: var(--secondary) !important;
+}
+
+.token.tag {
+  color: var(--primary) !important;
+}
+
+.token.attr-name {
+  color: var(--secondary) !important;
+}
+
+.token.constant,
+.token.class-name,
+.token.builtin {
+  color: var(--accent) !important;
+}
+
+.token.selector,
+.token.atrule {
+  color: var(--primary) !important;
+}
+
+.token.namespace {
+  color: var(--secondary) !important;
+}
+
+.token.entity {
+  color: var(--warning) !important;
+}
+
+.token.regex {
+  color: var(--warning) !important;
+}
+
+.token.important {
+  color: var(--warning) !important;
+}
+
+.token.inserted {
+  color: var(--success) !important;
+}

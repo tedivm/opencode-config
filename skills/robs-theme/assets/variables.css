@@ -1,0 +1,79 @@
+/* ============================================================
+   Variables — color tokens and gradients
+   Source: docs/vanilla/theme.css
+   ============================================================ */
+
+:root {
+  --bg: #1a1025;
+  --fg: #dcdcdc;
+  --surface: #2d1b4e;
+  --surface-fg: #dcdcdc;
+  --code: #0f0a1a;
+  --code-fg: #e0e0e0;
+  --border: #3d2b5a;
+  --primary: #de38a8;
+  --secondary: #b96dff;
+  --accent: #01cdfe;
+  --muted: #b4b4b4;
+  --dim: #999;
+  --success: #50c878;
+  --warning: #ffbe32;
+  --error: #ff5050;
+  --gradient: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  --gradient-reverse: linear-gradient(90deg, var(--accent), var(--secondary), var(--primary));
+  --gradient-vertical: linear-gradient(180deg, var(--primary), var(--secondary), var(--accent));
+
+  --primary-15: color-mix(in srgb, var(--primary) 15%, transparent);
+  --primary-30: color-mix(in srgb, var(--primary) 30%, transparent);
+  --secondary-15: color-mix(in srgb, var(--secondary) 15%, transparent);
+  --secondary-30: color-mix(in srgb, var(--secondary) 30%, transparent);
+  --accent-15: color-mix(in srgb, var(--accent) 15%, transparent);
+  --accent-30: color-mix(in srgb, var(--accent) 30%, transparent);
+  --error-15: color-mix(in srgb, var(--error) 15%, transparent);
+  --error-30: color-mix(in srgb, var(--error) 30%, transparent);
+  --success-15: color-mix(in srgb, var(--success) 15%, transparent);
+  --success-30: color-mix(in srgb, var(--success) 30%, transparent);
+  --warning-15: color-mix(in srgb, var(--warning) 15%, transparent);
+  --warning-30: color-mix(in srgb, var(--warning) 30%, transparent);
+
+  --sun-glow: #ffe033;
+  --sun-glow-70: rgba(255, 224, 51, 0.7);
+  --sun-glow-40: rgba(255, 224, 51, 0.4);
+  --text-on-gradient: #ffffff;
+}
+
+.light {
+  --bg: #fef5f7;
+  --fg: #2a1525;
+  --surface: #fce4ec;
+  --surface-fg: #2a1525;
+  --code: #fce4ec;
+  --code-fg: #4c1161;
+  --border: #e4b8c8;
+  --primary: #de38a8;
+  --secondary: #b96dff;
+  --accent: #01cdfe;
+  --muted: #8a6578;
+  --dim: #a88a9a;
+  --success: #50c878;
+  --warning: #ffbe32;
+  --error: #ff5050;
+
+  --primary-15: color-mix(in srgb, var(--primary) 15%, transparent);
+  --primary-30: color-mix(in srgb, var(--primary) 30%, transparent);
+  --secondary-15: color-mix(in srgb, var(--secondary) 15%, transparent);
+  --secondary-30: color-mix(in srgb, var(--secondary) 30%, transparent);
+  --accent-15: color-mix(in srgb, var(--accent) 15%, transparent);
+  --accent-30: color-mix(in srgb, var(--accent) 30%, transparent);
+  --error-15: color-mix(in srgb, var(--error) 15%, transparent);
+  --error-30: color-mix(in srgb, var(--error) 30%, transparent);
+  --success-15: color-mix(in srgb, var(--success) 15%, transparent);
+  --success-30: color-mix(in srgb, var(--success) 30%, transparent);
+  --warning-15: color-mix(in srgb, var(--warning) 15%, transparent);
+  --warning-30: color-mix(in srgb, var(--warning) 30%, transparent);
+
+  --sun-glow: #ffe033;
+  --sun-glow-70: rgba(255, 224, 51, 0.7);
+  --sun-glow-40: rgba(255, 224, 51, 0.4);
+  --text-on-gradient: #ffffff;
+}

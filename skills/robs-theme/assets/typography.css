@@ -1,0 +1,143 @@
+/* ============================================================
+   Typography — reset, body, headings, text, code, blockquote
+   Source: docs/vanilla/theme.css
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Serif 4', 'Roboto Slab', serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  transition: background 0.2s, color 0.2s;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: 2rem 0 0.75rem;
+  color: var(--primary);
+  text-shadow: 0 0 20px color-mix(in srgb, var(--primary) 60%, transparent), 0 0 40px color-mix(in srgb, var(--primary) 35%, transparent), 0 0 60px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid;
+  border-image: var(--gradient) 1;
+  color: var(--secondary);
+  text-shadow: 0 0 20px color-mix(in srgb, var(--secondary) 50%, transparent), 0 0 40px color-mix(in srgb, var(--secondary) 30%, transparent), 0 0 60px color-mix(in srgb, var(--secondary) 15%, transparent);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient);
+  filter: blur(6px);
+  opacity: 0.7;
+}
+
+.light h1 {
+  text-shadow: 0 0 20px color-mix(in srgb, var(--primary) 25%, transparent), 0 0 40px color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.light h2 {
+  text-shadow: 0 0 20px color-mix(in srgb, var(--secondary) 25%, transparent), 0 0 40px color-mix(in srgb, var(--secondary) 12%, transparent);
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--accent);
+}
+
+h4 { font-size: 1rem; margin: 1.2rem 0 0.4rem; color: var(--fg); }
+h5 { font-size: 0.9rem; margin: 1rem 0 0.3rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
+h6 { font-size: 0.85rem; margin: 1rem 0 0.3rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+p { margin: 0.5rem 0; }
+.subtitle { color: var(--fg); margin-bottom: 1.5rem; font-size: 0.95rem; }
+.muted { color: var(--muted); }
+.dim { color: var(--dim); }
+
+.text-pink { color: var(--primary); }
+.text-cyan { color: var(--accent); }
+.text-purple { color: var(--secondary); }
+.text-success { color: var(--success); }
+.text-warn { color: var(--warning); }
+.text-error { color: var(--error); }
+
+.text-sm { font-size: 0.85rem; }
+.text-xs { font-size: 0.75rem; }
+
+.font-mono { font-family: 'Source Code Pro', 'Roboto Mono', monospace; }
+.font-bold { font-weight: 700; }
+.uppercase { text-transform: uppercase; letter-spacing: 0.05em; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+  font-family: 'Source Code Pro', 'Roboto Mono', monospace;
+  background: var(--code);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: var(--accent);
+}
+
+pre {
+  background: var(--code);
+  color: var(--code-fg);
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  border: 1px solid var(--surface);
+}
+
+pre code { background: none; padding: 0; color: inherit; }
+
+.url {
+  font-family: monospace;
+  background: var(--surface);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  color: var(--accent);
+}
+
+blockquote {
+  position: relative;
+  border-left: 3px solid transparent;
+  background: var(--surface);
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  color: var(--surface-fg);
+  font-style: italic;
+}
+
+blockquote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--gradient-vertical);
+}
+
+ul, ol { margin: 0.5rem 0; padding-left: 1.5rem; }
+li { margin: 0.25rem 0; }

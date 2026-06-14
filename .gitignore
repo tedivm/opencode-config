@@ -5,3 +5,4 @@ bun.lock
 .context7-api-key
 .llm_host
 .openai_api_key
+skills/playwright-cli

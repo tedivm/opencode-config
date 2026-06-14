@@ -4,22 +4,23 @@
   "formatter": true,
   "provider": {
     "vllm": {
-      "npm": "@ai-sdk/openai-compatible",
+      "npm": "@ai-sdk/anthropic",
       "name": "vLLM",
       "options": {
         "baseURL": "{file:.llm_host}",
-        "apiKey": "{file:.openai_api_key}"
+        "chunkTimeout": 18000000,
       },
       "models": {
         "qwen3.6-27b": {
           "name": "Qwen3.6 27b",
           "limit": {
             "context": 200000,
-            "output": 40000
-          }
-        }
-      }
-    }
+            "output": 20000,
+          },
+          "modalities": { "input": ["text", "image"], "output": ["text"] },
+        },
+      },
+    },
   },
   "enabled_providers": ["vllm"],
   "model": "vllm/qwen3.6-27b",
@@ -29,9 +30,13 @@
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
       "headers": {
-        "CONTEXT7_API_KEY": "{file:.context7-api-key}"
-      }
-    }
+        "CONTEXT7_API_KEY": "{file:.context7-api-key}",
+      },
+    },
+    "svelte": {
+      "type": "local",
+      "command": ["npx", "-y", "@sveltejs/mcp"],
+    },
   },
-  "plugin": ["@tarquinen/opencode-dcp@latest"]
+  "plugin": ["@tarquinen/opencode-dcp@latest"],
 }

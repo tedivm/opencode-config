@@ -1,0 +1,84 @@
+/* ============================================================
+   Layout — grid, flex, toolbar, utilities
+   Source: docs/vanilla/theme.css
+   ============================================================ */
+
+/* --- Grid --- */
+
+.grid { display: grid; gap: 1rem; }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+/* --- Flex --- */
+
+.flex { display: flex; gap: 0.5rem; align-items: center; }
+.flex-wrap { flex-wrap: wrap; }
+
+/* --- Toolbar --- */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+/* --- Swatch / Color --- */
+
+.swatch {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-right: 6px;
+  border: 1px solid var(--border);
+}
+
+.color-cell { display: flex; align-items: center; gap: 6px; }
+.color-hex { font-family: 'Source Code Pro', monospace; font-size: 0.85rem; }
+
+/* --- Font Specimen --- */
+
+.font-specimen {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  margin: 0.25rem 0;
+  color: var(--fg);
+}
+
+/* --- Avatar --- */
+
+.avatar {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--border);
+  vertical-align: middle;
+}
+
+
+/* --- Glossary --- */
+
+.glossary {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--surface);
+}
+
+.glossary-term { font-weight: bold; font-family: monospace; color: var(--primary); }
+.glossary-desc { color: var(--fg); font-size: 0.9rem; }
+
+/* --- Config Sections --- */
+
+.config-section { margin: 1.5rem 0; }
+.config-path { font-size: 0.85rem; color: var(--dim); font-family: monospace; margin-bottom: 0.3rem; }
