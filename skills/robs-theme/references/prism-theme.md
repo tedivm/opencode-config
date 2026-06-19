@@ -23,8 +23,8 @@ Prism.js is not included by default. All styling is custom CSS driven by design 
 Prism injects inline `style` attributes on `<pre>` elements that override CSS variables. Strip them after every highlight pass:
 
 ```js
-for (const pre of document.querySelectorAll('pre')) {
-  pre.removeAttribute('style');
+for (const pre of document.querySelectorAll("pre")) {
+  pre.removeAttribute("style");
 }
 ```
 
@@ -37,7 +37,7 @@ code[class*="language-"],
 pre[class*="language-"] {
   color: var(--code-fg);
   background: var(--code) !important;
-  font-family: 'Source Code Pro', 'Roboto Mono', monospace;
+  font-family: "Source Code Pro", "Roboto Mono", monospace;
   font-size: 0.85rem;
   text-align: left;
   white-space: pre;
@@ -57,7 +57,11 @@ pre[class*="language-"] {
   overflow-x: auto;
 }
 
-pre code { background: none; padding: 0; color: inherit; }
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
 
 /* Comments: muted */
 .token.comment,
@@ -145,7 +149,9 @@ pre code { background: none; padding: 0; color: inherit; }
 }
 
 /* Diff */
-.token.inserted { color: var(--success) !important; }
+.token.inserted {
+  color: var(--success) !important;
+}
 ```
 
 ## Svelte Version
@@ -184,15 +190,15 @@ The Svelte implementation uses `:global()` wrappers on all token selectors and m
 
 ## Token-to-Color Mapping
 
-| Color | Value | Token Types |
-|---|---|---|
-| Primary (pink) | `#de38a8` | keyword, module, control, function, function-name, function-variable, tag, selector, atrule |
-| Secondary (purple) | `#b96dff` | property, variable, symbol, attr-name, namespace |
-| Accent (cyan) | `#01cdfe` | constant, class-name, builtin |
-| Success (green) | `#50c878` | prolog, doctype, string, char, attr-value, number, boolean, inserted |
-| Warning (amber) | `#ffbe32` | regex, entity, important |
-| Error (red) | `#ff5050` | operator, punctuation, url, deleted |
-| Muted | `#b4b4b4` | comment, cdata |
+| Color              | Value     | Token Types                                                                                 |
+| ------------------ | --------- | ------------------------------------------------------------------------------------------- |
+| Primary (pink)     | `#de38a8` | keyword, module, control, function, function-name, function-variable, tag, selector, atrule |
+| Secondary (purple) | `#b96dff` | property, variable, symbol, attr-name, namespace                                            |
+| Accent (cyan)      | `#01cdfe` | constant, class-name, builtin                                                               |
+| Success (green)    | `#50c878` | prolog, doctype, string, char, attr-value, number, boolean, inserted                        |
+| Warning (amber)    | `#ffbe32` | regex, entity, important                                                                    |
+| Error (red)        | `#ff5050` | operator, punctuation, url, deleted                                                         |
+| Muted              | `#b4b4b4` | comment, cdata                                                                              |
 
 ## Token Table Styling
 
@@ -233,7 +239,7 @@ Use this CSS for the Prism showcase page's token reference table:
 }
 
 .token-table .token-list {
-  font-family: 'Source Code Pro', 'Roboto Mono', monospace;
+  font-family: "Source Code Pro", "Roboto Mono", monospace;
   font-size: 0.8rem;
   color: var(--muted);
   line-height: 1.6;

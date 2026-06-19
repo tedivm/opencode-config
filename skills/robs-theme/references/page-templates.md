@@ -20,46 +20,73 @@ Main style guide page template. Zero dependencies, no build tools required.
 
 ```html
 <!DOCTYPE html>
-<html lang=en>
-<head>
-  <meta charset=UTF-8>
-  <meta name=viewport content=width=device-width, initial-scale=1.0>
-  <title>Page Title</title>
-  <!-- Self-hosted fonts (preferred) or use Google Fonts CDN: -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:wght@400;700&family=Source+Code+Pro:wght@400;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet"> -->
-  <link rel="stylesheet" href="./theme.css">
-</head>
-<body>
-  <h1>Page Title</h1>
-  <p class="subtitle">Page description</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width"
+      ="device-width,"
+      initial-scale="1.0"
+    />
+    <title>Page Title</title>
+    <!-- Self-hosted fonts (preferred) or use Google Fonts CDN: -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:wght@400;700&family=Source+Code+Pro:wght@400;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./theme.css" />
+  </head>
+  <body>
+    <h1>Page Title</h1>
+    <p class="subtitle">Page description</p>
 
-  <div class="toolbar">
-    <button class="theme-toggle" id="theme-toggle" title="Toggle Light Mode">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-    </button>
-    <a href="../" class="back-link">← Home</a>
-  </div>
+    <div class="toolbar">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle Light Mode">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+      </button>
+      <a href="../" class="back-link">← Home</a>
+    </div>
 
-  <!-- Content here -->
+    <!-- Content here -->
 
-  <script>
-    var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
-    var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
-    var toggle = document.getElementById('theme-toggle');
-    var isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    if (isLight) {
-      document.documentElement.classList.add('light');
-      toggle.innerHTML = moonSvg;
-      toggle.title = 'Toggle Dark Mode';
-    }
-    toggle.addEventListener('click', function() {
-      isLight = !isLight;
-      document.documentElement.classList.toggle('light', isLight);
-      toggle.innerHTML = isLight ? moonSvg : sunSvg;
-      toggle.title = isLight ? 'Toggle Dark Mode' : 'Toggle Light Mode';
-    });
-  </script>
-</body>
+    <script>
+      var sunSvg =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+      var moonSvg =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+      var toggle = document.getElementById("theme-toggle");
+      var isLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      if (isLight) {
+        document.documentElement.classList.add("light");
+        toggle.innerHTML = moonSvg;
+        toggle.title = "Toggle Dark Mode";
+      }
+      toggle.addEventListener("click", function () {
+        isLight = !isLight;
+        document.documentElement.classList.toggle("light", isLight);
+        toggle.innerHTML = isLight ? moonSvg : sunSvg;
+        toggle.title = isLight ? "Toggle Dark Mode" : "Toggle Light Mode";
+      });
+    </script>
+  </body>
 </html>
 ```
 
@@ -69,64 +96,91 @@ Code highlighting page with Prism.js. **Download Prism locally** (preferred) or 
 
 ```html
 <!DOCTYPE html>
-<html lang=en>
-<head>
-  <meta charset=UTF-8>
-  <meta name=viewport content=width=device-width, initial-scale=1.0>
-  <title>Code Highlighting</title>
-  <!-- Self-hosted fonts (preferred) or use Google Fonts CDN: -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:wght@400;700&family=Source+Code+Pro:wght@400;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet"> -->
-  <link rel="stylesheet" href="./theme.css">
-  <style>
-    /* Prism custom CSS here (see prism-theme.md) */
-  </style>
-</head>
-<body>
-  <h1>Code Highlighting</h1>
-  <p class="subtitle">Description</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width"
+      ="device-width,"
+      initial-scale="1.0"
+    />
+    <title>Code Highlighting</title>
+    <!-- Self-hosted fonts (preferred) or use Google Fonts CDN: -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:wght@400;700&family=Source+Code+Pro:wght@400;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./theme.css" />
+    <style>
+      /* Prism custom CSS here (see prism-theme.md) */
+    </style>
+  </head>
+  <body>
+    <h1>Code Highlighting</h1>
+    <p class="subtitle">Description</p>
 
-  <div class="toolbar">
-    <button class="theme-toggle" id="theme-toggle" title="Toggle Light Mode">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-    </button>
-    <a href="./index.html" class="back-link">← Back</a>
-  </div>
+    <div class="toolbar">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle Light Mode">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+      </button>
+      <a href="./index.html" class="back-link">← Back</a>
+    </div>
 
-  <!-- Code blocks with class="language-xxx" -->
+    <!-- Code blocks with class="language-xxx" -->
 
-  <!-- Self-hosted Prism (preferred): -->
-  <!-- <script src="./prism/prism.min.js"></script> -->
-  <!-- <script src="./prism/components/prism-json.min.js"></script> -->
-  <!-- CDN alternative: -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
-  <!-- ... other language components ... -->
-  <script>
-    var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
-    var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
-    var toggle = document.getElementById('theme-toggle');
-    var isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    if (isLight) {
-      document.documentElement.classList.add('light');
-      toggle.innerHTML = moonSvg;
-      toggle.title = 'Toggle Dark Mode';
-    }
-    toggle.addEventListener('click', function() {
-      isLight = !isLight;
-      document.documentElement.classList.toggle('light', isLight);
-      toggle.innerHTML = isLight ? moonSvg : sunSvg;
-      toggle.title = isLight ? 'Toggle Dark Mode' : 'Toggle Light Mode';
-
-      // Re-highlight on theme toggle since CSS variables change
-      if (typeof Prism !== 'undefined') {
-        setTimeout(Prism.highlightAll, 50);
+    <!-- Self-hosted Prism (preferred): -->
+    <!-- <script src="./prism/prism.min.js"></script> -->
+    <!-- <script src="./prism/components/prism-json.min.js"></script> -->
+    <!-- CDN alternative: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <!-- ... other language components ... -->
+    <script>
+      var sunSvg =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+      var moonSvg =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+      var toggle = document.getElementById("theme-toggle");
+      var isLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      if (isLight) {
+        document.documentElement.classList.add("light");
+        toggle.innerHTML = moonSvg;
+        toggle.title = "Toggle Dark Mode";
       }
-    });
-    if (typeof Prism !== 'undefined') {
-      Prism.highlightAll();
-    }
-  </script>
-</body>
+      toggle.addEventListener("click", function () {
+        isLight = !isLight;
+        document.documentElement.classList.toggle("light", isLight);
+        toggle.innerHTML = isLight ? moonSvg : sunSvg;
+        toggle.title = isLight ? "Toggle Dark Mode" : "Toggle Light Mode";
+
+        // Re-highlight on theme toggle since CSS variables change
+        if (typeof Prism !== "undefined") {
+          setTimeout(Prism.highlightAll, 50);
+        }
+      });
+      if (typeof Prism !== "undefined") {
+        Prism.highlightAll();
+      }
+    </script>
+  </body>
 </html>
 ```
 
@@ -138,54 +192,83 @@ Entry point that links to each implementation system. Uses card grid layout with
 
 ```html
 <!DOCTYPE html>
-<html lang=en>
-<head>
-  <meta charset=UTF-8>
-  <meta name=viewport content=width=device-width, initial-scale=1.0>
-  <title>Rob's Style Guide</title>
-  <!-- Self-hosted fonts (preferred) or use Google Fonts CDN: -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:wght@400;700&family=Source+Code+Pro:wght@400;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet"> -->
-  <link rel="stylesheet" href="./vanilla/theme.css">
-</head>
-<body>
-  <h1>Rob's Style Guide</h1>
-  <p class="subtitle">Shared design system across implementation frameworks</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width"
+      ="device-width,"
+      initial-scale="1.0"
+    />
+    <title>Rob's Style Guide</title>
+    <!-- Self-hosted fonts (preferred) or use Google Fonts CDN: -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:wght@400;700&family=Source+Code+Pro:wght@400;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./vanilla/theme.css" />
+  </head>
+  <body>
+    <h1>Rob's Style Guide</h1>
+    <p class="subtitle">
+      Shared design system across implementation frameworks
+    </p>
 
-  <div class="toolbar">
-    <button class="theme-toggle" id="theme-toggle" title="Toggle Light Mode">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-    </button>
-  </div>
-
-  <h2>Systems</h2>
-  <div class="grid grid-2">
-    <div class="card">
-      <a class="card-link" href="./vanilla/index.html">
-        <div class="card-header">System Name</div>
-        <div class="card-body">Description.</div>
-        <div class="card-meta"><span class="badge badge-app">Tag</span></div>
-      </a>
+    <div class="toolbar">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle Light Mode">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+      </button>
     </div>
-  </div>
 
-  <script>
-    var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
-    var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
-    var toggle = document.getElementById('theme-toggle');
-    var isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    if (isLight) {
-      document.documentElement.classList.add('light');
-      toggle.innerHTML = moonSvg;
-      toggle.title = 'Toggle Dark Mode';
-    }
-    toggle.addEventListener('click', function() {
-      isLight = !isLight;
-      document.documentElement.classList.toggle('light', isLight);
-      toggle.innerHTML = isLight ? moonSvg : sunSvg;
-      toggle.title = isLight ? 'Toggle Dark Mode' : 'Toggle Light Mode';
-    });
-  </script>
-</body>
+    <h2>Systems</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <a class="card-link" href="./vanilla/index.html">
+          <div class="card-header">System Name</div>
+          <div class="card-body">Description.</div>
+          <div class="card-meta"><span class="badge badge-app">Tag</span></div>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      var sunSvg =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+      var moonSvg =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+      var toggle = document.getElementById("theme-toggle");
+      var isLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      if (isLight) {
+        document.documentElement.classList.add("light");
+        toggle.innerHTML = moonSvg;
+        toggle.title = "Toggle Dark Mode";
+      }
+      toggle.addEventListener("click", function () {
+        isLight = !isLight;
+        document.documentElement.classList.toggle("light", isLight);
+        toggle.innerHTML = isLight ? moonSvg : sunSvg;
+        toggle.title = isLight ? "Toggle Dark Mode" : "Toggle Light Mode";
+      });
+    </script>
+  </body>
 </html>
 ```
 

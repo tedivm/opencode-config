@@ -17,7 +17,7 @@ In Svelte, the theme CSS is imported at the root of the app:
 
 ```js
 // src/main.js or src/App.svelte
-import './theme.css';
+import "./theme.css";
 ```
 
 The `theme.css` file defines CSS variables on `:root` (dark mode default) and `.light` (light mode override).
@@ -28,9 +28,24 @@ See [SKILL.md](../SKILL.md#css-variables) for the complete variable definitions.
 
 ```css
 :root {
-  --gradient: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-  --gradient-reverse: linear-gradient(90deg, var(--accent), var(--secondary), var(--primary));
-  --gradient-vertical: linear-gradient(180deg, var(--primary), var(--secondary), var(--accent));
+  --gradient: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--accent)
+  );
+  --gradient-reverse: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--secondary),
+    var(--primary)
+  );
+  --gradient-vertical: linear-gradient(
+    180deg,
+    var(--primary),
+    var(--secondary),
+    var(--accent)
+  );
 }
 ```
 
@@ -44,14 +59,16 @@ See [SKILL.md](../SKILL.md#css-variables) for the complete variable definitions.
 }
 
 body {
-  font-family: 'Source Serif 4', 'Roboto Slab', serif;
+  font-family: "Source Serif 4", "Roboto Slab", serif;
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
   background: var(--background);
   color: var(--foreground);
   line-height: 1.6;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 ```
 
@@ -66,7 +83,10 @@ h1 {
   font-size: 1.8rem;
   margin: 2rem 0 0.75rem;
   color: var(--primary);
-  text-shadow: 0 0 20px color-mix(in srgb, var(--primary) 60%, transparent), 0 0 40px color-mix(in srgb, var(--primary) 35%, transparent), 0 0 60px color-mix(in srgb, var(--primary) 20%, transparent);
+  text-shadow:
+    0 0 20px color-mix(in srgb, var(--primary) 60%, transparent),
+    0 0 40px color-mix(in srgb, var(--primary) 35%, transparent),
+    0 0 60px color-mix(in srgb, var(--primary) 20%, transparent);
 }
 
 h2 {
@@ -76,12 +96,15 @@ h2 {
   border-bottom: 1px solid;
   border-image: var(--gradient) 1;
   color: var(--secondary);
-  text-shadow: 0 0 20px color-mix(in srgb, var(--secondary) 50%, transparent), 0 0 40px color-mix(in srgb, var(--secondary) 30%, transparent), 0 0 60px color-mix(in srgb, var(--secondary) 15%, transparent);
+  text-shadow:
+    0 0 20px color-mix(in srgb, var(--secondary) 50%, transparent),
+    0 0 40px color-mix(in srgb, var(--secondary) 30%, transparent),
+    0 0 60px color-mix(in srgb, var(--secondary) 15%, transparent);
   position: relative;
 }
 
 h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -93,39 +116,92 @@ h2::after {
 }
 
 .light h1 {
-  text-shadow: 0 0 20px color-mix(in srgb, var(--primary) 25%, transparent), 0 0 40px color-mix(in srgb, var(--primary) 12%, transparent);
+  text-shadow:
+    0 0 20px color-mix(in srgb, var(--primary) 25%, transparent),
+    0 0 40px color-mix(in srgb, var(--primary) 12%, transparent);
 }
 
 .light h2 {
-  text-shadow: 0 0 20px color-mix(in srgb, var(--secondary) 25%, transparent), 0 0 40px color-mix(in srgb, var(--secondary) 12%, transparent);
+  text-shadow:
+    0 0 20px color-mix(in srgb, var(--secondary) 25%, transparent),
+    0 0 40px color-mix(in srgb, var(--secondary) 12%, transparent);
 }
 
-h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--accent); }
-h4 { font-size: 1rem; margin: 1.2rem 0 0.4rem; color: var(--foreground); }
-h5 { font-size: 0.9rem; margin: 1rem 0 0.3rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
-h6 { font-size: 0.85rem; margin: 1rem 0 0.3rem; color: var(--muted-foreground); text-transform: uppercase; letter-spacing: 0.05em; }
+h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--accent);
+}
+h4 {
+  font-size: 1rem;
+  margin: 1.2rem 0 0.4rem;
+  color: var(--foreground);
+}
+h5 {
+  font-size: 0.9rem;
+  margin: 1rem 0 0.3rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+h6 {
+  font-size: 0.85rem;
+  margin: 1rem 0 0.3rem;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 ```
 
 ### Text Utilities
 
 ```css
-p { margin: 0.5rem 0; }
+p {
+  margin: 0.5rem 0;
+}
 
-.muted { color: var(--muted-foreground); }
-.dim { color: var(--muted-foreground); }
+.muted {
+  color: var(--muted-foreground);
+}
+.dim {
+  color: var(--muted-foreground);
+}
 
-.text-primary { color: var(--primary); }
-.text-secondary { color: var(--secondary); }
-.text-accent { color: var(--accent); }
-.text-success { color: var(--success); }
-.text-warning { color: var(--warning); }
-.text-destructive { color: var(--destructive); }
+.text-primary {
+  color: var(--primary);
+}
+.text-secondary {
+  color: var(--secondary);
+}
+.text-accent {
+  color: var(--accent);
+}
+.text-success {
+  color: var(--success);
+}
+.text-warning {
+  color: var(--warning);
+}
+.text-destructive {
+  color: var(--destructive);
+}
 
-.text-sm { font-size: 0.85rem; }
-.text-xs { font-size: 0.75rem; }
-.font-mono { font-family: 'Source Code Pro', monospace; }
-.font-bold { font-weight: 700; }
-.uppercase { text-transform: uppercase; letter-spacing: 0.05em; }
+.text-sm {
+  font-size: 0.85rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+}
+.font-mono {
+  font-family: "Source Code Pro", monospace;
+}
+.font-bold {
+  font-weight: 700;
+}
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
 .subtitle {
   color: var(--foreground);
@@ -137,15 +213,20 @@ p { margin: 0.5rem 0; }
 ### Links
 
 ```css
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 ```
 
 ### Inline Elements
 
 ```css
 code {
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   background: var(--input);
   padding: 2px 6px;
   border-radius: 3px;
@@ -165,10 +246,14 @@ pre {
   border: 1px solid var(--border);
 }
 
-pre code { background: none; padding: 0; color: inherit; }
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
 
 .url {
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   background: var(--card);
   padding: 0.2rem 0.5rem;
   border-radius: 3px;
@@ -181,7 +266,7 @@ pre code { background: none; padding: 0; color: inherit; }
   border: 1px solid var(--border);
   border-radius: 3px;
   padding: 0.1rem 0.4rem;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   font-size: 0.75rem;
   color: var(--foreground);
 }
@@ -230,7 +315,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -243,8 +328,14 @@ blockquote::before {
 ### Lists
 
 ```css
-ul, ol { margin: 0.5rem 0; padding-left: 1.5rem; }
-li { margin: 0.25rem 0; }
+ul,
+ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+li {
+  margin: 0.25rem 0;
+}
 ```
 
 ### Horizontal Rule
@@ -255,12 +346,18 @@ hr {
   height: 1px;
   margin: 1.5rem 0;
   background: var(--gradient);
-  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--primary) 70%, transparent)) drop-shadow(0 0 16px color-mix(in srgb, var(--secondary) 40%, transparent));
+  filter: drop-shadow(
+      0 0 6px color-mix(in srgb, var(--primary) 70%, transparent)
+    )
+    drop-shadow(0 0 16px color-mix(in srgb, var(--secondary) 40%, transparent));
 }
 
 hr.reverse {
   background: var(--gradient-reverse);
-  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 70%, transparent)) drop-shadow(0 0 16px color-mix(in srgb, var(--secondary) 40%, transparent));
+  filter: drop-shadow(
+      0 0 6px color-mix(in srgb, var(--accent) 70%, transparent)
+    )
+    drop-shadow(0 0 16px color-mix(in srgb, var(--secondary) 40%, transparent));
 }
 ```
 
@@ -314,9 +411,15 @@ table th {
   margin-right: 0.4rem;
 }
 
-.status-online { background: var(--success); }
-.status-offline { background: var(--destructive); }
-.status-warn { background: var(--warning); }
+.status-online {
+  background: var(--success);
+}
+.status-offline {
+  background: var(--destructive);
+}
+.status-warn {
+  background: var(--warning);
+}
 ```
 
 ### Alert Boxes
@@ -331,10 +434,18 @@ table th {
   font-size: 0.9rem;
 }
 
-.instructions-info { border-left-color: var(--secondary); }
-.instructions-success { border-left-color: var(--success); }
-.instructions-warn { border-left-color: var(--warning); }
-.instructions-error { border-left-color: var(--destructive); }
+.instructions-info {
+  border-left-color: var(--secondary);
+}
+.instructions-success {
+  border-left-color: var(--success);
+}
+.instructions-warn {
+  border-left-color: var(--warning);
+}
+.instructions-error {
+  border-left-color: var(--destructive);
+}
 ```
 
 ### Forms
@@ -395,7 +506,9 @@ label {
   text-decoration: none;
 }
 
-.back-link:hover { text-decoration: underline; }
+.back-link:hover {
+  text-decoration: underline;
+}
 
 .flex-wrap {
   display: flex;
@@ -438,7 +551,7 @@ label {
 
 .glossary-term {
   font-weight: bold;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   color: var(--primary);
 }
 
@@ -451,11 +564,13 @@ label {
 ### Config Sections
 
 ```css
-.config-section { margin: 1.5rem 0; }
+.config-section {
+  margin: 1.5rem 0;
+}
 .config-path {
   font-size: 0.85rem;
   color: var(--muted-foreground);
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   margin-bottom: 0.3rem;
 }
 ```
@@ -473,6 +588,13 @@ label {
   border: 1px solid var(--border);
 }
 
-.color-cell { display: flex; align-items: center; gap: 6px; }
-.color-hex { font-family: 'Source Code Pro', monospace; font-size: 0.85rem; }
+.color-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.color-hex {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.85rem;
+}
 ```

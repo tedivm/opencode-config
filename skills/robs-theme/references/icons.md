@@ -2,24 +2,24 @@
 
 ## Library Overview
 
-| | |
-|---|---|
-| Name | Tabler Icons |
-| License | MIT |
+|            |                                        |
+| ---------- | -------------------------------------- |
+| Name       | Tabler Icons                           |
+| License    | MIT                                    |
 | Repository | https://github.com/tabler/tabler-icons |
-| Icon count | 6146+ (outline + filled) |
-| Format | SVG (inline), icon font (optional) |
-| Grid | 24×24, 2px stroke default |
-| Website | https://tabler.io/icons |
+| Icon count | 6146+ (outline + filled)               |
+| Format     | SVG (inline), icon font (optional)     |
+| Grid       | 24×24, 2px stroke default              |
+| Website    | https://tabler.io/icons                |
 
 ## Props / API
 
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `size` | number | 24 | Icon size in pixels (12, 16, 24, 32, 48) |
-| `stroke` | number | 2 | Stroke width (0.5 to 3) |
-| `color` | string | — | CSS color or variable (e.g., `var(--primary)`) |
-| `type` | string | "outline" | Icon variant: "outline" or "filled" |
+| Prop     | Type   | Default   | Description                                    |
+| -------- | ------ | --------- | ---------------------------------------------- |
+| `size`   | number | 24        | Icon size in pixels (12, 16, 24, 32, 48)       |
+| `stroke` | number | 2         | Stroke width (0.5 to 3)                        |
+| `color`  | string | —         | CSS color or variable (e.g., `var(--primary)`) |
+| `type`   | string | "outline" | Icon variant: "outline" or "filled"            |
 
 ## Vanilla HTML Usage
 
@@ -28,12 +28,20 @@
 Copy SVG markup directly from tabler.io/icons. Icons inherit `currentColor` so they pick up the parent text color automatically. To use theme colors, set `stroke="var(--primary)"` on the SVG element.
 
 ```html
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-  viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/>
-  <path d="M12 8v4"/>
-  <path d="M12 16h.01"/>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
 </svg>
 ```
 
@@ -44,8 +52,10 @@ Download the webfont CSS and font files from the `@tabler/icons-webfont` package
 **CDN alternative** (acceptable for quick prototypes):
 
 ```html
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+/>
 <i class="ti ti-alert-circle"></i>
 ```
 
@@ -95,7 +105,7 @@ Use these classes when building icon showcase or documentation pages.
 }
 
 .icon-cell .icon-name {
-  font-family: 'Source Code Pro', 'Roboto Mono', monospace;
+  font-family: "Source Code Pro", "Roboto Mono", monospace;
   font-size: 0.7rem;
   color: var(--muted);
   text-align: center;
@@ -120,7 +130,7 @@ Use these classes when building icon showcase or documentation pages.
 .icon-size-cell span {
   font-size: 0.7rem;
   color: var(--muted);
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
 }
 
 .icon-weights {
@@ -141,7 +151,7 @@ Use these classes when building icon showcase or documentation pages.
 .icon-weight-cell span {
   font-size: 0.7rem;
   color: var(--muted);
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
 }
 
 .icon-colors {
@@ -162,7 +172,7 @@ Use these classes when building icon showcase or documentation pages.
 .icon-color-cell span {
   font-size: 0.7rem;
   color: var(--muted);
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
 }
 
 .icon-stroke {
@@ -183,7 +193,7 @@ Use these classes when building icon showcase or documentation pages.
 .icon-stroke-cell span {
   font-size: 0.7rem;
   color: var(--muted);
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
 }
 ```
 

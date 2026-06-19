@@ -48,29 +48,29 @@ The fastest way to adopt the theme is to copy the complete [vanilla `theme.css`]
 
 These are `color-mix` expressions that compute at runtime from the base color tokens. The resolved hex values are shown for reference.
 
-| Variable | Resolved | Usage |
-|---|---|---|
-| `--primary-15` | `rgba(222, 56, 168, 0.15)` | Button/badge backgrounds |
-| `--primary-30` | `rgba(222, 56, 168, 0.30)` | Button hover states |
-| `--secondary-15` | `rgba(185, 109, 255, 0.15)` | Button/badge backgrounds |
-| `--secondary-30` | `rgba(185, 109, 255, 0.30)` | Button hover states |
-| `--accent-15` | `rgba(1, 205, 254, 0.15)` | Button/badge backgrounds |
-| `--accent-30` | `rgba(1, 205, 254, 0.30)` | Button hover states |
-| `--success-15` | `rgba(80, 200, 120, 0.15)` | Success button/badge backgrounds |
-| `--success-30` | `rgba(80, 200, 120, 0.30)` | Success hover states |
-| `--warning-15` | `rgba(255, 190, 50, 0.15)` | Warning button/badge backgrounds |
-| `--warning-30` | `rgba(255, 190, 50, 0.30)` | Warning hover states |
-| `--error-15` (vanilla) / `--destructive-15` (Svelte) | `rgba(255, 80, 80, 0.15)` | Error/destructive backgrounds |
-| `--error-30` (vanilla) / `--destructive-30` (Svelte) | `rgba(255, 80, 80, 0.30)` | Error/destructive hover |
+| Variable                                             | Resolved                    | Usage                            |
+| ---------------------------------------------------- | --------------------------- | -------------------------------- |
+| `--primary-15`                                       | `rgba(222, 56, 168, 0.15)`  | Button/badge backgrounds         |
+| `--primary-30`                                       | `rgba(222, 56, 168, 0.30)`  | Button hover states              |
+| `--secondary-15`                                     | `rgba(185, 109, 255, 0.15)` | Button/badge backgrounds         |
+| `--secondary-30`                                     | `rgba(185, 109, 255, 0.30)` | Button hover states              |
+| `--accent-15`                                        | `rgba(1, 205, 254, 0.15)`   | Button/badge backgrounds         |
+| `--accent-30`                                        | `rgba(1, 205, 254, 0.30)`   | Button hover states              |
+| `--success-15`                                       | `rgba(80, 200, 120, 0.15)`  | Success button/badge backgrounds |
+| `--success-30`                                       | `rgba(80, 200, 120, 0.30)`  | Success hover states             |
+| `--warning-15`                                       | `rgba(255, 190, 50, 0.15)`  | Warning button/badge backgrounds |
+| `--warning-30`                                       | `rgba(255, 190, 50, 0.30)`  | Warning hover states             |
+| `--error-15` (vanilla) / `--destructive-15` (Svelte) | `rgba(255, 80, 80, 0.15)`   | Error/destructive backgrounds    |
+| `--error-30` (vanilla) / `--destructive-30` (Svelte) | `rgba(255, 80, 80, 0.30)`   | Error/destructive hover          |
 
 ### Utility
 
-| Variable | Value | Usage |
-|---|---|---|
-| `--sun-glow` | `#ffe033` | Sun icon in dark mode |
-| `--sun-glow-70` | `rgba(255, 224, 51, 0.7)` | Sun icon glow (outer) |
-| `--sun-glow-40` | `rgba(255, 224, 51, 0.4)` | Sun icon glow (inner) |
-| `--text-on-gradient` | `#ffffff` | Text on gradient backgrounds |
+| Variable             | Value                     | Usage                        |
+| -------------------- | ------------------------- | ---------------------------- |
+| `--sun-glow`         | `#ffe033`                 | Sun icon in dark mode        |
+| `--sun-glow-70`      | `rgba(255, 224, 51, 0.7)` | Sun icon glow (outer)        |
+| `--sun-glow-40`      | `rgba(255, 224, 51, 0.4)` | Sun icon glow (inner)        |
+| `--text-on-gradient` | `#ffffff`                 | Text on gradient backgrounds |
 
 ### Gradient Variables
 
@@ -213,7 +213,10 @@ h1 {
   font-size: 1.8rem;
   margin: 2rem 0 0.75rem;
   color: var(--primary);
-  text-shadow: 0 0 20px color-mix(in srgb, var(--primary) 60%, transparent), 0 0 40px color-mix(in srgb, var(--primary) 35%, transparent), 0 0 60px color-mix(in srgb, var(--primary) 20%, transparent);
+  text-shadow:
+    0 0 20px color-mix(in srgb, var(--primary) 60%, transparent),
+    0 0 40px color-mix(in srgb, var(--primary) 35%, transparent),
+    0 0 60px color-mix(in srgb, var(--primary) 20%, transparent);
 }
 
 h2 {
@@ -223,7 +226,10 @@ h2 {
   border-bottom: 1px solid;
   border-image: var(--gradient) 1;
   color: var(--secondary);
-  text-shadow: 0 0 20px color-mix(in srgb, var(--secondary) 50%, transparent), 0 0 40px color-mix(in srgb, var(--secondary) 30%, transparent), 0 0 60px color-mix(in srgb, var(--secondary) 15%, transparent);
+  text-shadow:
+    0 0 20px color-mix(in srgb, var(--secondary) 50%, transparent),
+    0 0 40px color-mix(in srgb, var(--secondary) 30%, transparent),
+    0 0 60px color-mix(in srgb, var(--secondary) 15%, transparent);
   position: relative;
 }
 
@@ -240,11 +246,15 @@ h2::after {
 }
 
 .light h1 {
-  text-shadow: 0 0 20px color-mix(in srgb, var(--primary) 25%, transparent), 0 0 40px color-mix(in srgb, var(--primary) 12%, transparent);
+  text-shadow:
+    0 0 20px color-mix(in srgb, var(--primary) 25%, transparent),
+    0 0 40px color-mix(in srgb, var(--primary) 12%, transparent);
 }
 
 .light h2 {
-  text-shadow: 0 0 20px color-mix(in srgb, var(--secondary) 25%, transparent), 0 0 40px color-mix(in srgb, var(--secondary) 12%, transparent);
+  text-shadow:
+    0 0 20px color-mix(in srgb, var(--secondary) 25%, transparent),
+    0 0 40px color-mix(in srgb, var(--secondary) 12%, transparent);
 }
 
 h3 {
@@ -407,27 +417,27 @@ li {
 
 All component CSS is in [assets/components.css](assets/components.css) (sourced from `docs/vanilla/theme.css`):
 
-| Component    | Variants                                                                                                                                              |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Button**   | `.btn-primary`, `.btn-secondary`, `.btn-tertiary`, `.btn-subtle`, `.btn-destructive`, `.btn-outline`, `.btn-ghost`, `.btn-link`, `.btn-gradient`, `.btn-sm`, `.btn-lg`, `.btn-icon` |
-| **Badge**    | `.badge-app`, `.badge-ai`, `.badge-infra`, `.badge-success`, `.badge-warn`, `.badge-error`, `.badge-gradient`                                         |
-| **Tag**      | `.tag`                                                                                                                                                |
-| **Card**     | `.card`, `.card-header`, `.card-body`, `.card-meta`, `.card-link`                                                                                     |
-| **Alert**    | `.instructions` + `-info`, `-success`, `-warn`, `-error`                                                                                              |
-| **Progress** | `.progress`, `.progress-bar` + color variants + `.gradient`, `.gradient-reverse`                                                                      |
-| **Status**   | `.status-dot` + `.status-online`, `.status-offline`, `.status-warn`                                                                                   |
-| **Forms**    | `input`, `textarea`, `select`, `label`                                                                                                                |
-| **Table**    | `table`, `th`, `td`                                                                                                                                   |
-| **Inline**   | `.tooltip`, `.kbd`, `.url`                                                                                                                            |
-| **HR**       | `hr` + `.reverse`                                                                                                                                     |
-| **Theme toggle** | `.theme-toggle` + `.light .theme-toggle`                                                                                                          |
-| **Color table** | `.color-toggle`, `tr[data-derived]`, `.derived-name`                                                                                                |
-| **Spinner** | `.spinner`, `.spinner-sm`, `.spinner-lg`, `.spinner-track`, `.spinner-track-sm`, `.spinner-track-lg`                                                  |
-| **Pulse dot** | `.pulse-dot` + `.pulse-dot-pink`, `-cyan`, `-purple`, `-success`, `-warn`, `-error` + `.pulse-dot-sm`, `.pulse-dot-lg`                               |
-| **Skeleton** | `.skeleton`, `.skeleton-line`, `.skeleton-line-sm`, `.skeleton-line-lg`, `.skeleton-avatar`, `.skeleton-card` + width utilities `w-100`, `w-75`, `w-50`, `w-25` |
-| **Dot loader** | `.dot-loader` + `.dot-loader-sm`, `.dot-loader-lg`, `.dot-loader-solid`, `.dot-loader-pink`                                                          |
-| **Bar loader** | `.bar-loader` + `.bar-loader-sm`, `.bar-loader-lg` (5 bars: primary → blend → secondary → blend → accent)                                          |
-| **Vertical bar loader** | `.bar-loader-vertical` + `.bar-loader-vertical-sm`, `.bar-loader-vertical-lg` (same 5-bar gradient, scaleY animation)                               |
+| Component               | Variants                                                                                                                                                                            |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Button**              | `.btn-primary`, `.btn-secondary`, `.btn-tertiary`, `.btn-subtle`, `.btn-destructive`, `.btn-outline`, `.btn-ghost`, `.btn-link`, `.btn-gradient`, `.btn-sm`, `.btn-lg`, `.btn-icon` |
+| **Badge**               | `.badge-app`, `.badge-ai`, `.badge-infra`, `.badge-success`, `.badge-warn`, `.badge-error`, `.badge-gradient`                                                                       |
+| **Tag**                 | `.tag`                                                                                                                                                                              |
+| **Card**                | `.card`, `.card-header`, `.card-body`, `.card-meta`, `.card-link`                                                                                                                   |
+| **Alert**               | `.instructions` + `-info`, `-success`, `-warn`, `-error`                                                                                                                            |
+| **Progress**            | `.progress`, `.progress-bar` + color variants + `.gradient`, `.gradient-reverse`                                                                                                    |
+| **Status**              | `.status-dot` + `.status-online`, `.status-offline`, `.status-warn`                                                                                                                 |
+| **Forms**               | `input`, `textarea`, `select`, `label`                                                                                                                                              |
+| **Table**               | `table`, `th`, `td`                                                                                                                                                                 |
+| **Inline**              | `.tooltip`, `.kbd`, `.url`                                                                                                                                                          |
+| **HR**                  | `hr` + `.reverse`                                                                                                                                                                   |
+| **Theme toggle**        | `.theme-toggle` + `.light .theme-toggle`                                                                                                                                            |
+| **Color table**         | `.color-toggle`, `tr[data-derived]`, `.derived-name`                                                                                                                                |
+| **Spinner**             | `.spinner`, `.spinner-sm`, `.spinner-lg`, `.spinner-track`, `.spinner-track-sm`, `.spinner-track-lg`                                                                                |
+| **Pulse dot**           | `.pulse-dot` + `.pulse-dot-pink`, `-cyan`, `-purple`, `-success`, `-warn`, `-error` + `.pulse-dot-sm`, `.pulse-dot-lg`                                                              |
+| **Skeleton**            | `.skeleton`, `.skeleton-line`, `.skeleton-line-sm`, `.skeleton-line-lg`, `.skeleton-avatar`, `.skeleton-card` + width utilities `w-100`, `w-75`, `w-50`, `w-25`                     |
+| **Dot loader**          | `.dot-loader` + `.dot-loader-sm`, `.dot-loader-lg`, `.dot-loader-solid`, `.dot-loader-pink`                                                                                         |
+| **Bar loader**          | `.bar-loader` + `.bar-loader-sm`, `.bar-loader-lg` (5 bars: primary → blend → secondary → blend → accent)                                                                           |
+| **Vertical bar loader** | `.bar-loader-vertical` + `.bar-loader-vertical-sm`, `.bar-loader-vertical-lg` (same 5-bar gradient, scaleY animation)                                                               |
 
 Svelte component code (Button, Badge, Card, etc.): [references/components.md](references/components.md)
 
@@ -437,17 +447,17 @@ Svelte component code (Button, Badge, Card, etc.): [references/components.md](re
 
 Grid, flex, toolbar, swatch, avatar, glossary: [assets/layout.css](assets/layout.css)
 
-| Utility                                | Description                            |
-| -------------------------------------- | -------------------------------------- |
-| `.grid`, `.grid-2`, `.grid-3`          | CSS grid with 1rem gap                 |
-| `.flex`, `.flex-wrap`                  | Flexbox with 0.5rem gap                |
-| `.toolbar`                             | Flex row, 1rem gap, 2rem bottom margin |
-| `.back-link`                           | Muted link, underlines on hover        |
-| `.swatch`, `.color-cell`, `.color-hex` | Color palette display                  |
-| `.font-specimen`                       | Font showcase text                     |
-| `.avatar`                              | 32px circular placeholder              |
+| Utility                                         | Description                            |
+| ----------------------------------------------- | -------------------------------------- |
+| `.grid`, `.grid-2`, `.grid-3`                   | CSS grid with 1rem gap                 |
+| `.flex`, `.flex-wrap`                           | Flexbox with 0.5rem gap                |
+| `.toolbar`                                      | Flex row, 1rem gap, 2rem bottom margin |
+| `.back-link`                                    | Muted link, underlines on hover        |
+| `.swatch`, `.color-cell`, `.color-hex`          | Color palette display                  |
+| `.font-specimen`                                | Font showcase text                     |
+| `.avatar`                                       | 32px circular placeholder              |
 | `.glossary`, `.glossary-term`, `.glossary-desc` | Glossary listing                       |
-| `.config-section`, `.config-path`      | Config display                         |
+| `.config-section`, `.config-path`               | Config display                         |
 
 ---
 
@@ -458,8 +468,10 @@ Grid, flex, toolbar, swatch, avatar, glossary: [assets/layout.css](assets/layout
 Dark mode is the default. The `.light` class on `<html>` switches to light mode. Uses SVG icons — sun in dark mode, moon in light mode.
 
 ```js
-var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
-var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+var sunSvg =
+  '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+var moonSvg =
+  '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
 var toggle = document.getElementById("theme-toggle");
 var isLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 if (isLight) {
