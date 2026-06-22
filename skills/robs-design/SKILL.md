@@ -17,16 +17,17 @@ Write the document in this exact order. Omit sections that don't apply.
 
 1. **`# Design: <name>`** — Title line with change name and brief scope
 2. **`## Context`** — Current state, existing conventions, what this builds on
-3. **`## Goals / Non-Goals`** — Two subsections: `**Goals:**` (bulleted) and `**Non-Goals:**` (bulleted)
-4. **`## Decisions`** — Numbered decisions (D1, D2, ...) with full code
-5. **`## Data Storage`** — Full model/entity definitions for every new or changed persistence structure
-6. **`## Data Structures`** — Input and output schema definitions
-7. **`## Interfaces`** — All user-facing interfaces: REST APIs, CLI commands, MCP tools, TUI screens, GUI components
-8. **`## Implementation Detail`** — Full service code, background tasks, CLI, settings
-9. **`## Migrations`** — Creation order, dependencies, compatibility notes
-10. **`## Testing Philosophy`** — Prose sections (not bullets) per test area
-11. **`## Documentation Plan`** — Prose sections (not tables) per doc file
-12. **`## Risks / Trade-offs`** — Prose sections with **Risk:** and **Mitigation:** paragraphs
+3. **`## References`** — Documentation reviewed during design: links with one-sentence descriptions
+4. **`## Goals / Non-Goals`** — Two subsections: `**Goals:**` (bulleted) and `**Non-Goals:**` (bulleted)
+5. **`## Decisions`** — Numbered decisions (D1, D2, ...) with full code
+6. **`## Data Storage`** — Full model/entity definitions for every new or changed persistence structure
+7. **`## Data Structures`** — Input and output schema definitions
+8. **`## Interfaces`** — All user-facing interfaces: REST APIs, CLI commands, MCP tools, TUI screens, GUI components
+9. **`## Implementation Detail`** — Full service code, background tasks, CLI, settings
+10. **`## Migrations`** — Creation order, dependencies, compatibility notes
+11. **`## Testing Philosophy`** — Prose sections (not bullets) per test area
+12. **`## Documentation Plan`** — Prose sections (not tables) per doc file
+13. **`## Risks / Trade-offs`** — Prose sections with **Risk:** and **Mitigation:** paragraphs
 
 ### Context example
 
@@ -36,6 +37,16 @@ Write the document in this exact order. Omit sections that don't apply.
 The project has infrastructure scaffolding (FastAPI, async SQLAlchemy 2.0, Celery, Docker Compose) but zero domain functionality. No models, no routes, no business logic. This design establishes the first complete data flow.
 
 The architecture follows the existing template's conventions: async SQLAlchemy with `mapped_column`, Pydantic v2 settings, Typer CLI with `@syncify`, and the router pattern for FastAPI.
+```
+
+### References example
+
+```markdown
+## References
+
+- [feedparser docs](https://feedparser.readthedocs.io/) — Defines how feed parsing and normalization behave, informing the URL normalization strategy.
+- [SQLAlchemy async session docs](https://docs.sqlalchemy.org/en/20/orm/extensions/asyncio.html) — Validates the `_syncify` bridge pattern for running async sessions inside Celery tasks.
+- [FastAPI dependency injection](https://fastapi.tiangolo.com/tutorial/dependencies/) — Informs how service instances are injected into route handlers.
 ```
 
 ### Goals / Non-Goals example

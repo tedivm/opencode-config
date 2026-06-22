@@ -6,7 +6,6 @@ Personal opencode CLI configuration directory (`~/.config/opencode`).
 
 ```bash
 make install    # installs snip (output compression tool)
-npm install     # installs @opencode-ai/plugin dependency
 ```
 
 ## Configuration
@@ -42,6 +41,15 @@ Custom agent skills in `skills/`:
 | `robs-design`           | Rob's system design standard, used with openspec    |
 | `robs-theme`            | Rob's color and font preferences                    |
 | `searching-files`       | File content search with `rg` (ripgrep)             |
+
+## Commands
+
+Custom commands in `commands/`:
+
+| Command       | Purpose                                                            |
+| ------------- | ------------------------------------------------------------------ |
+| `gha-upgrade` | Update all GitHub Action versions to their latest releases         |
+| `openspec-review` | Review OpenSpec proposals and changes                         |
 
 ## Environment Files
 

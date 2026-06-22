@@ -1,6 +1,6 @@
 ---
 name: exploring-code
-description: Use when doing a thorough exploration of an existing codebase. Guides a subagent through reading documentation, reviewing tests, analyzing architecture, and producing a comprehensive overview. Don't use for quick lookups or single-file questions.
+description: Use to do a thorough exploration of an existing codebase. Always use this when asked to explore a codebase/repo/project. Always use it when starting a task that requires deep knowledge of the codebase. Don't use for quick lookups or single-file questions.
 license: MIT
 metadata:
   author: Robert Hafner
