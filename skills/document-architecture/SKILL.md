@@ -1,6 +1,6 @@
 ---
 name: document-architecture
-description: "Use when creating a comprehensive architecture document for a codebase. First explores the codebase using the exploring-code workflow, then writes a detailed architecture document. Don't use for quick documentation lookups or single-file questions: only use when asked to make architectural documents."
+description: "Use when creating a comprehensive architecture document for a codebase. First explores the codebase using the exploring-code skill, then writes a detailed architecture document. Don't use for quick documentation lookups or single-file questions: only use when asked to create or update architectural documents."
 license: MIT
 metadata:
   author: Robert Hafner

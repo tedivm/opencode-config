@@ -1,6 +1,6 @@
 ---
 name: github-actions
-description: "Use when creating, modifying, or reviewing GitHub Actions workflow files. Covers workflow syntax, action selection, dependabot configuration, and CI/CD best practices."
+description: "You MUST use when creating, modifying, or reviewing GitHub Actions workflow files. For security reasons it is VITAL that you use this skill when working with third party actions (including `actions/checkout` and other official actions)."
 license: MIT
 metadata:
   author: Robert Hafner
