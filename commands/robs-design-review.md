@@ -3,6 +3,7 @@ description: Review a robs-design document for architectural soundness and third
 agent: explore
 subtask: true
 ---
+
 # Rob's Design Review
 
 ## Overview
@@ -207,6 +208,7 @@ Group by Category, then order by Impact within each category. Lead with Critical
 ### Critical
 
 **1. Architectural Change — Critical**
+
 - **Section:** D2 (Vector Storage Strategy)
 - **Issue:** Design uses Qdrant's sparse vector API directly, but Qdrant's 2024 docs recommend using their new `SparseVectorConfig` with BM25 tokenizer for production workloads. The current approach requires manual tokenization in application code.
 - **Why it matters:** Manual tokenization duplicates work Qdrant can handle natively, adds latency, and creates drift between application tokenization and index tokenization. This affects all search accuracy long-term.
@@ -217,16 +219,16 @@ Group by Category, then order by Impact within each category. Lead with Critical
 ### High
 
 **2. Architectural Change — High**
+
 - **Section:** D1 (Embedding Strategy)
 - **Issue:** Design uses a single shared embedding model for both indexing and real-time search. As the corpus grows, re-embedding on every update will become a bottleneck. The community has identified two mature patterns for this problem that the design doesn't consider.
 - **Why it matters:** Without separating batch and real-time embedding paths, update latency will degrade as the collection scales. This affects the entire write path long-term.
 - **Recommendation:** Two viable options, each with trade-offs:
-  - **Option A: Async embedding queue.** Decouple embedding from the write path — upsert raw text immediately, embed in a background worker, update vectors when ready. *Pro:* zero write latency impact, batches embeddings for throughput. *Con:* brief window where new content isn't searchable (seconds to minutes).
-  - **Option B: Tiered embedding.** Use a fast small model for real-time updates (searchable immediately), then a higher-quality model in batch for accuracy. *Pro:* immediate searchability with best-of-both accuracy. *Con:* adds a second model dependency and dual-quality results during the batch window.
+  - **Option A: Async embedding queue.** Decouple embedding from the write path — upsert raw text immediately, embed in a background worker, update vectors when ready. _Pro:_ zero write latency impact, batches embeddings for throughput. _Con:_ brief window where new content isn't searchable (seconds to minutes).
+  - **Option B: Tiered embedding.** Use a fast small model for real-time updates (searchable immediately), then a higher-quality model in batch for accuracy. _Pro:_ immediate searchability with best-of-both accuracy. _Con:_ adds a second model dependency and dual-quality results during the batch window.
   - My assessment: Option A is the simpler starting point and aligns with how the project already handles background tasks. Option B is worth considering if search freshness is a hard requirement.
 - **Sources:** https://qdrant.tech/documentation/full-text/#indexing-strategy, https://github.com/qdrant/qdrant/discussions/1234
 ```
-
 
 ## Checklist
 

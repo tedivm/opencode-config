@@ -19,12 +19,12 @@ Scan all GitHub Action workflow files, find every action used, check their lates
 
 Extract the granularity of the current version reference, then match it to the latest release:
 
-| Current reference | Pinning level | Update to |
-|---|---|---|
-| `@v6` | Major only | `@v7` (latest major) |
-| `@v6.5` | Major.minor | `@v7.2` (latest major.minor) |
-| `@v6.5.3` | Full semver | `@v7.2.1` (latest major.minor.patch) |
-| `@abc1234...` | SHA commit | `@def5678...` (resolve the same tag to its newest SHA) |
+| Current reference | Pinning level | Update to                                              |
+| ----------------- | ------------- | ------------------------------------------------------ |
+| `@v6`             | Major only    | `@v7` (latest major)                                   |
+| `@v6.5`           | Major.minor   | `@v7.2` (latest major.minor)                           |
+| `@v6.5.3`         | Full semver   | `@v7.2.1` (latest major.minor.patch)                   |
+| `@abc1234...`     | SHA commit    | `@def5678...` (resolve the same tag to its newest SHA) |
 
 If the action already uses the latest version at its pinning level, skip it and note it as up-to-date.
 

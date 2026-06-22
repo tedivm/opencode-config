@@ -5,6 +5,7 @@ Load this when creating commands that run as subagents (`subtask: true` or with 
 ## Why subagent output needs guidance
 
 A subagent does extensive work — research, exploration, evaluation — but the parent agent only sees the final message. Without explicit output guidance, subagents tend to:
+
 - Include their working process and discarded alternatives (noise)
 - Omit recommendations and source URLs (parent can't act)
 - Write narrative prose instead of structured findings (hard to parse)
@@ -39,6 +40,7 @@ Be concise but thorough. Each finding should stand on its own. Include source UR
 ## Customizing for your command
 
 Adapt the "what the primary agent needs" list to match your command's output:
+
 - **Review commands:** findings with category, impact, recommendation, sources
 - **Research commands:** summarized findings with source URLs for deeper investigation
 - **Planning commands:** ordered steps with dependencies, risks, and decision points

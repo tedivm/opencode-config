@@ -35,11 +35,13 @@ Every phase below requires live research. Treat this like a code audit where you
 ## When to use vs. skip
 
 **Use this when:**
+
 - The command validates APIs, libraries, models, or packages against live documentation
 - The command researches alternatives or best practices
 - Accuracy matters more than speed
 
 **Skip this when:**
+
 - The command works entirely within the project's own codebase
 - The command is creative or generative (writing code, designing features)
 - The command's output doesn't depend on external facts

@@ -50,13 +50,13 @@ Include a concrete example of what good output looks like. This dramatically imp
 ### Critical
 
 **1. Category — Impact**
+
 - **Section:** Where the finding relates
 - **Issue:** What's wrong
 - **Why it matters:** Long-term consequence
 - **Recommendation:** What to do, with trade-offs if applicable
 - **Fix:** Specific change (if applicable)
 - **Sources:** URLs for verification
-
 ```
 
 ## Prose over arguments for review commands

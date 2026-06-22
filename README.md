@@ -46,10 +46,10 @@ Custom agent skills in `skills/`:
 
 Custom commands in `commands/`:
 
-| Command       | Purpose                                                            |
-| ------------- | ------------------------------------------------------------------ |
-| `gha-upgrade` | Update all GitHub Action versions to their latest releases         |
-| `openspec-review` | Review OpenSpec proposals and changes                         |
+| Command           | Purpose                                                    |
+| ----------------- | ---------------------------------------------------------- |
+| `gha-upgrade`     | Update all GitHub Action versions to their latest releases |
+| `openspec-review` | Review OpenSpec proposals and changes                      |
 
 ## Environment Files
 
