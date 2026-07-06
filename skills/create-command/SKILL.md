@@ -25,10 +25,11 @@ The command runs as `/test` in the TUI.
 1. **Determine scope** — default to per-project (`.opencode/commands/`). Use global (`~/.config/opencode/commands/`) only if explicitly requested.
 2. **Assess command type** — determine what kind of command this is and load the matching reference files. See [Command types](#command-types) below.
 3. **Decide execution context** — review and research-heavy commands should default to `subtask: true`. Simple actions don't need it. If unsure, ask the user.
-4. **Create the file** — name it `<command-name>.md`. Use the `system-action` pattern: lowercase, hyphen-separated, named for what it does (e.g., `gha-upgrade`, `openspec-review`, `robs-design-review`).
-5. **Write frontmatter** — set `description` (required). Add `agent`, `model`, or `subtask` as determined above.
-6. **Write the template** — the body content becomes the prompt sent to the LLM. See [Prompt structure](#prompt-structure) below.
-7. **Hand off to the user** — the user tests the command with `/command-name` and tells you what to refine. Iterate based on their feedback.
+4. **Add arguments for subagents** — if using `subtask: true` or an `agent` field, include a `## User Request` section with `$ARGUMENTS`. This is required and is the only way to pass user context into the subagent.
+5. **Create the file** — name it `<command-name>.md`. Use the `system-action` pattern: lowercase, hyphen-separated, named for what it does (e.g., `gha-upgrade`, `openspec-review`, `robs-design-review`).
+6. **Write frontmatter** — set `description` (required). Add `agent`, `model`, or `subtask` as determined above.
+7. **Write the template** — the body content becomes the prompt sent to the LLM. See [Prompt structure](#prompt-structure) below.
+8. **Hand off to the user** — the user tests the command with `/command-name` and tells you what to refine. Iterate based on their feedback.
 
 ## Command types
 
@@ -40,7 +41,9 @@ The command runs as a subagent and its final message is the only thing the paren
 
 **Make it a subagent when:** the task is heavy, multi-step, or benefits from isolated execution. Examples: comprehensive reviews, deep research, multi-phase analysis.
 
-**How to set it up:** add `subtask: true` to the frontmatter. If the command benefits from a specialized agent (e.g., `scout` for research, `explore` for codebase analysis), add an `agent` field too. Load [references/subagent-output.md](references/subagent-output.md) and add its guidance to the command template. If you're specifying an `agent`, also load [references/agent-selection.md](references/agent-selection.md) to pick the right one.
+**How to set it up:** add `subtask: true` to the frontmatter. If the command benefits from a specialized agent (e.g., `scout` for research, `explore` for codebase analysis), add an `agent` field too. Load [references/subagent-output.md](references/subagent-output.md) and add both its output guidance and its User Request section to the command template. If you're specifying an `agent`, also load [references/agent-selection.md](references/agent-selection.md) to pick the right one.
+
+**Arguments are required.** Every subagent command must include a `## User Request` section with `$ARGUMENTS` — it is the only way to pass additional context into the subagent.
 
 ### Review / Analysis
 
@@ -140,7 +143,21 @@ Create a new React component with TypeScript support. The component name and req
 3. Add basic structure and default exports
 ```
 
-**Prose over arguments.** Arguments (`$ARGUMENTS`, `$1`, `$2`) are rarely used correctly and add friction. Write commands as prose instructions — the agent has access to the conversation context and will pick up what it needs. If the command needs specific inputs, phrase it as instructions: "the user will provide X" or "look for Y in the project."
+**Arguments are required for subagent commands.** Any command that uses `subtask: true` or an `agent` field must include a `## User Request` section with `$ARGUMENTS` in a markdown code block. This is the only way to pass additional context from the user into the subagent. Without it, the subagent cannot receive user-specific guidance.
+
+````markdown
+## User Request
+
+The user may have additional requirements, such as identifying specific designs to review.
+
+```markdown
+$ARGUMENTS
+```
+
+If there is nothing in the quote block above then there are no special requests.
+````
+
+**Prose instructions for simple actions.** Non-subagent commands can rely on conversation context. Phrase inputs as instructions: "the user will provide X" or "look for Y in the project."
 
 **Shell output** — use `!`command`` to inject bash output into the prompt.
 
@@ -159,3 +176,7 @@ Reference files — see [Command types](#command-types) for when to load each:
 - **Agent selection**: [references/agent-selection.md](references/agent-selection.md)
 - **Research methodology**: [references/research-methodology.md](references/research-methodology.md)
 - **Review and analysis commands**: [references/review-commands.md](references/review-commands.md)
+
+```
+
+```

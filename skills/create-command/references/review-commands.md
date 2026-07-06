@@ -59,13 +59,29 @@ Include a concrete example of what good output looks like. This dramatically imp
 - **Sources:** URLs for verification
 ```
 
-## Prose over arguments for review commands
+## User Request for review commands
 
-Review and analysis commands often work better as prose instructions where the agent discovers relevant files itself, rather than using `$1`, `$ARGUMENTS`, or `@filepath` references. This gives the agent flexibility to find the right artifacts:
+Review commands that run as subagents must include a `## User Request` section with `$ARGUMENTS` so the user can specify which artifacts to review, scope constraints, or particular concerns:
+
+````markdown
+## User Request
+
+The user may have additional requirements, such as identifying specific designs to review.
+
+```markdown
+$ARGUMENTS
+```
+````
+
+If there is nothing in the quote block above then there are no special requests.
+
+````
+
+For discovery-based reviews (where the agent finds the right files), combine the arguments section with prose instructions:
 
 ```markdown
 Find the [target] document. Look for [pattern] in the current project. If multiple exist, review the most recently modified one. **If no [target] is found, report this immediately and stop.**
-```
+````
 
 ## When to use this
 
