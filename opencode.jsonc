@@ -1,7 +1,12 @@
+// OpenCode configuration
 {
   "$schema": "https://opencode.ai/config.json",
+
+  // Enable LSP and formatter integration
   "lsp": true,
   "formatter": true,
+
+  // LLM provider configuration
   "provider": {
     "vllm": {
       "npm": "@ai-sdk/anthropic",
@@ -22,10 +27,15 @@
       },
     },
   },
+
+  // Active provider and default models
   "enabled_providers": ["vllm"],
   "model": "vllm/qwen3.6-27b",
   "small_model": "vllm/qwen3.6-27b",
+
+  // MCP servers
   "mcp": {
+    // Documentation search
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
@@ -33,10 +43,31 @@
         "CONTEXT7_API_KEY": "{file:.context7-api-key}",
       },
     },
+    // Svelte framework tools
     "svelte": {
       "type": "local",
       "command": ["npx", "-y", "@sveltejs/mcp"],
     },
+    // Web scraping and search (replaces built-in webfetch/websearch)
+    "firecrawl": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@respawn-app/tool-filter-mcp",
+        "--upstream",
+        "https://search.brain.tdvm.net/firecrawl-mcp/mcp",
+        "--deny",
+        "firecrawl_interact.*,firecrawl_extract,firecrawl_agent.*,firecrawl_parse,firecrawl_search_feedback,firecrawl_feedback,firecrawl_monitor.*,firecrawl_research_search_papers,firecrawl_research_inspect_paper,firecrawl_research_related_papers,firecrawl_research_read_paper",
+      ],
+    },
   },
+
+  // Disable built-in web search tools in favor of firecrawl
+  "permission": {
+    "websearch": "deny",
+  },
+
+  // Plugins
   "plugin": ["@tarquinen/opencode-dcp@latest"],
 }

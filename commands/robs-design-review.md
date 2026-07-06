@@ -49,6 +49,16 @@ You are running as a subagent. Your final message is the only output the primary
 
 Be concise but thorough. Each finding should stand on its own. Include source URLs alongside findings so the agent can verify or explore further independently.
 
+## User Request
+
+The user may have additional requirements, such as identifying specific designs to review.
+
+```markdown
+$ARGUMENTS
+```
+
+If there is nothing in the quote block above then there are no special requests.
+
 ## Review
 
 ### 0. Setup

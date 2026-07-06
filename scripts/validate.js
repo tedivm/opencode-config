@@ -29,7 +29,7 @@ function stripComments(text) {
   return result;
 }
 
-const files = ['opencode.json', 'dcp.jsonc'];
+const files = ['opencode.jsonc', 'dcp.jsonc'];
 
 for (const file of files) {
   const filePath = path.resolve(file);

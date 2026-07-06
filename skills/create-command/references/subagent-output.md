@@ -37,6 +37,26 @@ You are running as a subagent. Your final message is the only output the primary
 Be concise but thorough. Each finding should stand on its own. Include source URLs alongside findings so the agent can verify or explore further independently.
 ```
 
+## User Request section
+
+Every subagent command must include a `## User Request` section that uses `$ARGUMENTS` to accept user input. This is the only way to pass additional context into the subagent. Without it, the subagent cannot receive user-specific guidance.
+
+````markdown
+## User Request
+
+Describe what the user might provide here — additional requirements, specific targets, scope constraints.
+
+```markdown
+$ARGUMENTS
+```
+````
+
+If there is nothing in the quote block above then there are no special requests.
+
+`````
+
+Customize the introductory prose to match your command's domain. The ````markdown` fence around `$ARGUMENTS` presents the user's input as a clearly delimited block the agent can parse.
+
 ## Customizing for your command
 
 Adapt the "what the primary agent needs" list to match your command's output:
@@ -45,3 +65,4 @@ Adapt the "what the primary agent needs" list to match your command's output:
 - **Research commands:** summarized findings with source URLs for deeper investigation
 - **Planning commands:** ordered steps with dependencies, risks, and decision points
 - **Analysis commands:** structured data, patterns found, anomalies flagged
+`````
