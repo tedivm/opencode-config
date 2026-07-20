@@ -18,6 +18,19 @@ Render a `.mmd` file to PNG, SVG, or PDF using `@mermaid-js/mermaid-cli`. The bu
 - **xmllint** — required for SVG pretty-printing (`brew install libxml2` on macOS)
 - **Puppeteer dependencies** — `@mermaid-js/mermaid-cli` uses Puppeteer under the hood. On macOS, install Chromium: `npx puppeteer browsers install chrome`
 
+## Width Guidelines
+
+Default widths by diagram complexity:
+
+| Diagram Type           | Width     | Example                        |
+| ---------------------- | --------- | ------------------------------ |
+| Simple (1-3 nodes)     | `-w 1200` | Small flowchart                |
+| Medium (4-10 nodes)    | `-w 2000` | Standard sequence diagram      |
+| Large (11-20 nodes)    | `-w 3000` | Full ERD, complex architecture |
+| Very large (20+ nodes) | `-w 4000` | Complete database schema       |
+
+Adjust based on readability — text should be clearly legible without zooming.
+
 ## Assets
 
 Use the bundled files in `assets/`:
@@ -36,7 +49,7 @@ Use the bundled files in `assets/`:
 3. **Render using npx** — no local install needed:
 
 ```bash
-# PNG
+# PNG (adjust -w based on diagram complexity — see Width Guidelines)
 npx -p @mermaid-js/mermaid-cli mmdc \
   -w 2000 -b transparent \
   --cssFile <skill_base>/assets/png.css \
@@ -63,13 +76,24 @@ npx -p @mermaid-js/mermaid-cli mmdc \
 
 ### Batch render (multiple files)
 
-For rendering many `.mmd` files in a project, set up the same options as variables and loop:
+For rendering many `.mmd` files in a project, set up the same options as variables and loop. Use dynamic width based on line count:
 
 ```bash
-MMD_OPTS="-w 2000 -b transparent --cssFile <skill_base>/assets/png.css --configFile <skill_base>/assets/config.json"
+MMD_BASE="-b transparent --cssFile <skill_base>/assets/png.css --configFile <skill_base>/assets/config.json"
 
 for f in $(find . -name "*.mmd" -not -path "*/build/*"); do
-  npx -p @mermaid-js/mermaid-cli mmdc $MMD_OPTS -e png -i "$f" -o "${f}.png"
+  # Auto-select width based on diagram size (line count as proxy for complexity)
+  LINES=$(wc -l < "$f")
+  if [ "$LINES" -gt 300 ]; then
+    WIDTH=4000
+  elif [ "$LINES" -gt 150 ]; then
+    WIDTH=3000
+  elif [ "$LINES" -gt 50 ]; then
+    WIDTH=2000
+  else
+    WIDTH=1200
+  fi
+  npx -p @mermaid-js/mermaid-cli mmdc -w $WIDTH $MMD_BASE -e png -i "$f" -o "${f}.png"
 done
 ```
 
@@ -83,15 +107,23 @@ When a mermaid diagram is embedded in a markdown file (e.g., README.md) inside a
    TMP_MMD=$(mktemp /tmp/diagram_XXXXXX.mmd)
    ```
 3. **Paste the extracted mermaid content into `$TMP_MMD`**
-4. **Render from the temp file:**
+4. **Auto-select width based on diagram complexity:**
+   ```bash
+   LINES=$(wc -l < $TMP_MMD)
+   if [ "$LINES" -gt 300 ]; then WIDTH=4000
+   elif [ "$LINES" -gt 150 ]; then WIDTH=3000
+   elif [ "$LINES" -gt 50 ]; then WIDTH=2000
+   else WIDTH=1200; fi
+   ```
+5. **Render from the temp file:**
    ```bash
    npx -p @mermaid-js/mermaid-cli mmdc \
-     -w 2000 -b transparent \
+     -w $WIDTH -b transparent \
      --cssFile <skill_base>/assets/png.css \
      --configFile <skill_base>/assets/config.json \
      -e png -i $TMP_MMD -o output.png
    ```
-5. **Clean up:**
+6. **Clean up:**
    ```bash
    rm $TMP_MMD
    ```
@@ -114,9 +146,22 @@ The default `assets/config.json` uses:
 
 To change the theme, edit `assets/config.json` or override with `-t <theme>` on the command line (options: `default`, `dark`, `forest`, `neutral`).
 
+## Width Guidance
+
+Use line count as a proxy for diagram complexity to auto-select width:
+
+| Lines   | Complexity                               | Width |
+| ------- | ---------------------------------------- | ----- |
+| < 50    | Simple (flowchart, sequence)             | 1200  |
+| 50–150  | Medium (class diagram, state machine)    | 2000  |
+| 150–300 | Large (ERD, architecture)                | 3000  |
+| > 300   | Very large (full schema, complex system) | 4000+ |
+
+For very large diagrams (10+ tables/nodes), start at 4000px and increase if text is unreadable.
+
 ## Troubleshooting
 
 - **Puppeteer/Chromium errors** — run `npx puppeteer browsers install chrome` to install the browser dependency
 - **xmllint not found** — install with `brew install libxml2` (macOS) or `apt install libxml2-utils` (Linux)
-- **Diagram too small** — increase `-w 2000` to a wider value
+- **Diagram too small** — see Width Guidance table; increase `-w` value (e.g., `-w 4000` for large schemas)
 - **Font rendering differs** — ensure the target font is installed on the system running the render

@@ -19,7 +19,7 @@
         "qwen3.6-27b": {
           "name": "Qwen3.6 27b",
           "limit": {
-            "context": 200000,
+            "context": 262144,
             "output": 20000,
           },
           "modalities": { "input": ["text", "image"], "output": ["text"] },
@@ -66,6 +66,16 @@
   // Disable built-in web search tools in favor of firecrawl
   "permission": {
     "websearch": "deny",
+  },
+
+  // Give explore subagent access to web scraping and docs search
+  "agent": {
+    "explore": {
+      "permission": {
+        "firecrawl_*": "allow",
+        "context7_*": "allow",
+      },
+    },
   },
 
   // Plugins

@@ -15,6 +15,16 @@ Scan all GitHub Action workflow files, find every action used, check their lates
 - If a workflow file contains multiple actions, update all applicable ones in a single edit
 - Skip any action whose owner is the same as the current repository owner (internal actions)
 
+## User Request
+
+The user may have additional requirements, such as targeting specific workflow files or excluding certain actions.
+
+```markdown
+$ARGUMENTS
+```
+
+If there is nothing in the quote block above then there are no special requests.
+
 ## Version Update Rules
 
 Extract the granularity of the current version reference, then match it to the latest release:

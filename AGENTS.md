@@ -1,5 +1,7 @@
 # AGENTS.md
 
+The current year is 2026.
+
 ## CRITICAL INSTRUCTIONS
 
 **YOU MUST FOLLOW ALL INSTRUCTIONS IN THIS DOCUMENT.** Every section, every rule, every restriction is mandatory. Do not skip sections. Do not shortcut the guidance. Do not substitute your own approach. Execute every instruction exactly as written. Deviating from these instructions produces unreliable results and violates your operating constraints.
@@ -220,7 +222,7 @@ Use subagents aggressively for any work that can run in parallel. If you have a 
 **Don't use subagents for:**
 
 - Tasks that depend on each other's output — do those sequentially
-- Single trivial operations — just use the tools directly
+- Single trivial operations like reading files — just use the tools directly
 - Anything requiring interactive input
 
 ## Do Only What Is Asked
