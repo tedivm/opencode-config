@@ -36,15 +36,23 @@ You are running as a subagent. Your final message is the only output the primary
 
 Be concise but thorough. Each finding should stand on its own.
 
+## User Request
+
+The user may specify a particular proposal to review or additional scope constraints.
+
+```markdown
+$ARGUMENTS
+```
+
+If there is nothing in the quote block above then there are no special requests.
+
 ## Review
 
 ### 0. Setup
 
-**Target change:** `$ARGUMENTS`
-
 1. Locate the proposal to review:
-   - **If the target change above is non-empty**, use it as the change name and look for `openspec/changes/<that-name>/proposal.md`.
-   - **If the target change is empty**, search `openspec/changes/*/proposal.md` and pick the most recently modified one.
+   - **If the User Request above specifies a target change**, use it as the change name and look for `openspec/changes/<that-name>/proposal.md`.
+   - **If the User Request is empty**, search `openspec/changes/*/proposal.md` and pick the most recently modified one.
    - **If no proposal is found, report this immediately and stop.**
 2. Note the proposal's last modification time using `stat` or `ls -l` on the proposal file.
 3. Read the full proposal document.

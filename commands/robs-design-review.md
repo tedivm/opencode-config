@@ -1,6 +1,6 @@
 ---
 description: Review a robs-design document for architectural soundness and third-party API accuracy
-agent: explore
+agent: architect
 subtask: true
 ---
 

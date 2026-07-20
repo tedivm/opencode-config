@@ -1,11 +1,8 @@
 ---
-name: document-architecture
-description: "Use when creating a comprehensive architecture document for a codebase. First explores the codebase using the exploring-code skill, then writes a detailed architecture document. Don't use for quick documentation lookups or single-file questions: only use when asked to create or update architectural documents."
-license: MIT
-metadata:
-  author: Robert Hafner
-  source: https://github.com/tedivm/opencode-config
+description: Create a comprehensive architecture document for a codebase
 ---
+
+# Document Architecture
 
 ## Quick start
 
@@ -30,9 +27,9 @@ Additionally, capture these details for documentation:
 - Error handling conventions and error code definitions
 ```
 
-3. **Receive the exploration report** — Collect the subagent's comprehensive output.
+1. **Receive the exploration report** — Collect the subagent's comprehensive output.
 
-4. **Write the architecture document** — Create the output directory if needed (`mkdir -p`) and write the document using the template below. Populate every section with specific details from the exploration report. Use actual file paths, function names, and code references — not vague descriptions.
+2. **Write the architecture document** — Create the output directory if needed (`mkdir -p`) and write the document using the template below. Populate every section with specific details from the exploration report. Use actual file paths, function names, and code references — not vague descriptions.
 
 ## Document template
 
