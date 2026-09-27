@@ -1,7 +1,7 @@
 ---
 description: Review a robs-design document for architectural soundness and third-party API accuracy
 agent: architect
-subtask: true
+subagent: true
 ---
 
 # Rob's Design Review

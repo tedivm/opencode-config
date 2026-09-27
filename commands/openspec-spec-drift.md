@@ -1,7 +1,7 @@
 ---
 description: Review drift between OpenSpec specs and the actual codebase
 agent: general
-subtask: true
+subagent: true
 ---
 
 # OpenSpec Spec Drift Review

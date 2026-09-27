@@ -7,22 +7,25 @@
   "formatter": true,
 
   // LLM provider configuration
-  "provider": {
+  "providers": {
     "vllm": {
-      "npm": "@ai-sdk/anthropic",
-      "name": "vLLM",
-      "options": {
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
         "baseURL": "{file:.llm_host}",
         "chunkTimeout": 18000000,
       },
       "models": {
-        "qwen3.6-27b": {
-          "name": "Qwen3.6 27b",
+        "qwen_27b": {
+          "name": "Qwen3.8 27b",
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image"],
+            "output": ["text"],
+          },
           "limit": {
             "context": 262144,
             "output": 20000,
           },
-          "modalities": { "input": ["text", "image"], "output": ["text"] },
         },
       },
     },
@@ -30,54 +33,58 @@
 
   // Active provider and default models
   "enabled_providers": ["vllm"],
-  "model": "vllm/qwen3.6-27b",
-  "small_model": "vllm/qwen3.6-27b",
+  "model": "vllm/qwen_27b",
 
-  // MCP servers
-  "mcp": {
-    // Documentation search
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "{file:.context7-api-key}",
-      },
+  // Agent overrides
+  "agents": {
+    // Small model for title generation (replaces small_model)
+    "title": {
+      "model": "vllm/qwen_27b",
     },
-    // Svelte framework tools
-    "svelte": {
-      "type": "local",
-      "command": ["npx", "-y", "@sveltejs/mcp"],
-    },
-    // Web scraping and search (replaces built-in webfetch/websearch)
-    "firecrawl": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@respawn-app/tool-filter-mcp",
-        "--upstream",
-        "https://search.brain.tdvm.net/firecrawl-mcp/mcp",
-        "--deny",
-        "firecrawl_interact.*,firecrawl_extract,firecrawl_agent.*,firecrawl_parse,firecrawl_search_feedback,firecrawl_feedback,firecrawl_monitor.*,firecrawl_research_search_papers,firecrawl_research_inspect_paper,firecrawl_research_related_papers,firecrawl_research_read_paper",
+    // Give explore subagent access to web scraping and docs search
+    "explore": {
+      "permissions": [
+        { "action": "firecrawl_*", "resource": "*", "effect": "allow" },
+        { "action": "context7_*", "resource": "*", "effect": "allow" },
       ],
     },
   },
 
-  // Disable built-in web search tools in favor of firecrawl
-  "permission": {
-    "websearch": "deny",
-  },
-
-  // Give explore subagent access to web scraping and docs search
-  "agent": {
-    "explore": {
-      "permission": {
-        "firecrawl_*": "allow",
-        "context7_*": "allow",
+  // MCP servers
+  "mcp": {
+    "servers": {
+      // Documentation search
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp",
+        "headers": {
+          "CONTEXT7_API_KEY": "{file:.context7-api-key}",
+        },
+      },
+      // Svelte framework tools
+      "svelte": {
+        "type": "local",
+        "command": ["npx", "-y", "@sveltejs/mcp"],
+      },
+      // Web scraping and search (replaces built-in webfetch/websearch)
+      "firecrawl": {
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "@respawn-app/tool-filter-mcp",
+          "--upstream",
+          "https://search.brain.tdvm.net/firecrawl-mcp/mcp",
+          "--deny",
+          "firecrawl_interact.*,firecrawl_extract,firecrawl_agent.*,firecrawl_parse,firecrawl_search_feedback,firecrawl_feedback,firecrawl_monitor.*,firecrawl_research_search_papers,firecrawl_research_inspect_paper,firecrawl_research_related_papers,firecrawl_research_read_paper",
+        ],
       },
     },
   },
 
+  // Disable built-in web search tools in favor of firecrawl
+  "permissions": [{ "action": "websearch", "resource": "*", "effect": "deny" }],
+
   // Plugins
-  "plugin": ["@tarquinen/opencode-dcp@latest"],
+  "plugins": ["@tarquinen/opencode-dcp@latest"],
 }
