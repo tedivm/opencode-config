@@ -6,3 +6,4 @@ bun.lock
 .llm_host
 .openai_api_key
 skills/playwright-cli
+service.json

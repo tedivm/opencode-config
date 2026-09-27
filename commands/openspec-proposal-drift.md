@@ -1,7 +1,7 @@
 ---
 description: Review drift in an OpenSpec proposal against archived changes
 agent: general
-subtask: true
+subagent: true
 ---
 
 # OpenSpec Proposal Drift Review

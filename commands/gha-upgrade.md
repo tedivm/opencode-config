@@ -1,6 +1,6 @@
 ---
 description: Update all GitHub Action versions to their latest releases
-subtask: true
+subagent: true
 ---
 
 ## Overview
